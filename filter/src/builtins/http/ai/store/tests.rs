@@ -728,7 +728,6 @@ async fn make_pg_store() -> PostgresResponseStore {
 async fn pg_store_initializes_schema() {
     let store = make_pg_store().await;
 
-
     let result = store
         .get_response("tenant_a", "nonexistent")
         .await
@@ -825,7 +824,6 @@ async fn pg_delete_existing_response() {
 #[ignore]
 async fn pg_delete_missing_response_returns_false() {
     let store = make_pg_store().await;
-
 
     let deleted = store
         .delete_response("tenant_a", "nonexistent")
