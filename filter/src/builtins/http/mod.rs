@@ -25,10 +25,11 @@ pub use ai::ResponseStoreFilter;
 pub use ai::ResponseStoreRegistry;
 #[cfg(feature = "ai-inference")]
 pub use ai::ResponsesFormatFilter;
+pub use ai::TokenUsageHeadersFilter;
 #[cfg(feature = "ai-inference")]
 pub use ai::token_usage::{TokenUsage, TokenUsageProvider, extract_token_usage};
 pub use ai::{A2aFilter, JsonRpcFilter, McpFilter};
-pub use observability::{AccessLogFilter, RequestIdFilter, TokenUsageHeadersFilter};
+pub use observability::{AccessLogFilter, RequestIdFilter};
 pub use payload_processing::{CompressionFilter, JsonBodyFieldFilter};
 pub use security::{
     ContainsValue, CorsFilter, CredentialInjectionFilter, CsrfFilter, DisallowedOriginMode, ForwardedHeadersFilter,

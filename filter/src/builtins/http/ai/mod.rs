@@ -2,7 +2,8 @@
 // Copyright (c) 2024 Praxis Contributors
 
 //! AI filters for HTTP workloads: inference routing, prompt enrichment,
-//! agentic protocol classification, and `OpenAI` API pipelines.
+//! agentic protocol classification, token usage header injection, and
+//! `OpenAI` API pipelines.
 
 pub(crate) mod agentic;
 #[cfg(feature = "ai-inference")]
@@ -24,6 +25,8 @@ pub(crate) mod store;
 #[cfg(feature = "ai-inference")]
 pub(crate) mod token_usage;
 
+mod token_usage_headers;
+
 pub use agentic::{A2aFilter, JsonRpcFilter, McpFilter};
 #[cfg(feature = "ai-inference")]
 pub use anthropic::AnthropicMessagesFormatFilter;
@@ -39,3 +42,4 @@ pub use openai::ResponsesFormatFilter;
 pub use prompt_enrich::PromptEnrichFilter;
 #[cfg(feature = "ai-inference")]
 pub use store::ResponseStoreRegistry;
+pub use token_usage_headers::TokenUsageHeadersFilter;
